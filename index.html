@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Науково-методичний відділ / ЦК загальних дисциплін ВКСС</title>
+
+  <style>
+    :root{
+      --bg: #e9e4dc;                 /* теплий світлий фон */
+      --text: #1a1a1a;
+      --blue: #6ea6ff;               /* синій як у кнопках */
+      --blue-dark: #2b4f9e;
+      --shadow: 0 6px 14px rgba(0,0,0,.18);
+      --radius: 6px;
+      --content-max: 1180px;
+    }
+
+    *{ box-sizing: border-box; }
+    body{
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.45;
+    }
+
+    /* Обгортка сторінки */
+    .page{
+      width: min(var(--content-max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0 60px;
+      position: relative;
+    }
+
+    /* Верхній блок (емблема + заголовок) */
+    .hero{
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 22px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .logo-wrap{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 10px;
+    }
+
+    .logo{
+      width: 185px;
+      height: 185px;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,.15));
+    }
+
+    .title-wrap{
+      text-align: center;
+      padding-right: 240px; /* місце під праве меню */
+    }
+
+    /* Декоративний “плакатний” заголовок */
+    .title{
+      margin: 0;
+<!--      font-weight: 800;-->
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+<!--      font-size: clamp(22px, 3vw, 38px);-->
+      line-height: 1.15;
+      /* якщо на сайті є свій шрифт — підставиш тут */
+      font-family: "Georgia", "Times New Roman", serif;
+      text-shadow: 0 1px 0 rgba(0,0,0,.08);
+    }
+
+    /* Основна зона: текст + правий сайдбар */
+    .layout{
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* Контент */
+    .content{
+      padding-left: 10px;
+    }
+
+    .lead{
+      font-size: 20px;
+      margin: 8px 0 18px;
+      text-align: justify;
+    }
+
+    a{
+      color: #1a57ff;
+      text-decoration: none;
+    }
+    a:hover{ text-decoration: underline; }
+
+    .section-title{
+      margin: 26px 0 8px;
+      font-size: 26px;
+      font-weight: 800;
+    }
+
+    .subline{
+      margin: 0 0 16px;
+      font-size: 18px;
+    }
+
+    /* Нумерований список як у прикладі */
+    ol{
+      margin: 0;
+      padding-left: 24px;
+      font-size: 18px;
+    }
+    ol li{ margin: 8px 0; }
+
+    /* Праве меню */
+    .sidebar{
+      position: sticky;
+      top: 14px;
+      padding-top: 6px;
+    }
+
+    .navbtn{
+      display: block;
+      width: 100%;
+      padding: 16px 12px;
+      margin: 0 0 14px;
+      text-align: center;
+      background: var(--blue);
+      color: #0b204a;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,.08);
+
+      font-weight: 800;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 1.05;
+      user-select: none;
+    }
+
+    .navbtn:hover{
+      filter: brightness(0.97);
+      transform: translateY(-1px);
+    }
+
+    .navbtn:active{
+      transform: translateY(0px);
+      box-shadow: 0 3px 10px rgba(0,0,0,.16);
+    }
+
+    /* Адаптивність */
+    @media (max-width: 980px){
+      .title-wrap{ padding-right: 0; }
+      .layout{ grid-template-columns: 1fr; }
+      .sidebar{ position: relative; top: 0; }
+      .hero{ grid-template-columns: 160px 1fr; }
+      .logo{ width: 140px; height: 140px; }
+    }
+
+    @media (max-width: 560px){
+      .hero{ grid-template-columns: 1fr; }
+      .logo-wrap{ justify-content: center; }
+      .title-wrap{ text-align: center; }
+      .lead{ font-size: 18px; }
+      .section-title{ font-size: 22px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+
+    <!-- Верх: емблема + заголовок -->
+    <header class="hero">
+      <div class="logo-wrap">
+        <!-- Заміни src на свою емблему -->
+        <img class="logo" src="logo.png" alt="Емблема" />
+      </div>
+
+      <div class="title-wrap">
+        <h2 class="title">
+          НАУКОВО-МЕТОДИЧНИЙ ВІДДІЛ ЗАБЕЗПЕЧЕННЯ ЯКОСТІ ОСВІТНЬОЇ ДІЯЛЬНОСТІ ВКСС ХНУПС
+        </h2>
+      </div>
+    </header>
+
+    <!-- Контент + праве меню -->
+    <section class="layout">
+      <article class="content">
+        <p class="lead">
+          <b>Науково-методичний відділ забезпечення якості освітньої діяльності</b> Військового коледжу сержантського складу Харківського національного університету Повітряних Сил імені Івана Кожедуба створений з метою забезпечення постійного підвищення рівня якості освітньої діяльності у Коледжі, координації та моніторингу роботи структурних підрозділів з питань організації та реалізації освітнього процесу, а також сприяння дотриманню принципів академічної доброчесності та формуванню культури якості в освітньому середовищі.
+          Діяльність відділу спрямована на системне удосконалення внутрішніх механізмів забезпечення якості освіти, аналіз результатів освітньої діяльності, методичний супровід підрозділів, узагальнення та впровадження кращих практик у сфері підготовки здобувачів освіти.
+        </p>
+
+<!--        <p class="lead" style="margin-top:0;">-->
+<!--          Діяльність підрозділу здійснюється відповідно до-->
+<!--          <a href="#" target="_blank" rel="noopener">Положення про … (посилання на документ)</a>.-->
+<!--        </p>-->
+
+        <h2 class="section-title">Керівництво відділом здійснює:</h2>
+        <p class="subline">
+          <b>Посада / звання / ПІБ</b> (наприклад: доктор технічних наук, полковник Ірина ХИЖНЯК).
+        </p>
+
+        <h2 class="section-title">ОСНОВНІ ФУНКЦІЇ ВІДДІЛУ</h2>
+        <ol>
+          <li>Впровадження принципів та процедур забезпечення якості освітньої діяльності у Військовому коледжі сержантського складу з урахуванням досвіду вітчизняних і зарубіжних закладів освіти та військової освіти.</li>
+          <li>Організація, координація та супровід роботи з ліцензування та акредитації освітніх програм Коледжу, здійснення їх моніторингу та періодичного перегляду.</li>
+          <li>Проведення внутрішнього постакредитаційного моніторингу освітніх програм.</li>
+          <li>Системний моніторинг якості освітніх послуг, що надаються Коледжем, з метою забезпечення відповідності підготовки встановленим вимогам, а також задоволення потреб замовників і учасників освітнього процесу.</li>
+          <li>Координація процедур та заходів щодо залучення різних груп стейкхолдерів до процесів удосконалення якості освітньої діяльності у Коледжі.</li>
+          <li>Забезпечення дотримання принципів академічної доброчесності та етики академічних взаємовідносин усіма учасниками освітнього процесу, у тому числі створення та підтримка функціонування ефективної системи запобігання і виявлення академічного плагіату.</li>
+          <li>Пошук і впровадження сучасних наукових та науково-методичних рішень щодо підвищення рівня якості освітньої діяльності в Коледжі та інтеграція отриманих результатів в освітній процес.</li>
+        </ol>
+
+        <h2 class="section-title">Контакти</h2>
+        <p class="subline">
+          Телефон: (xxx) xxx-xx-xx<br>
+          Email: example@domain.ua<br>
+          Адреса: м. Харків, …<br>
+          Графік: Пн–Пт 09:00–18:00
+        </p>
+      </article>
+
+      <aside class="sidebar" aria-label="Праве меню">
+        <!-- Заміни href на реальні сторінки -->
+        <a class="navbtn" href="#">Головна</a>
+        <a class="navbtn" href="#">Новини</a>
+        <a class="navbtn" href="#">Громадське<br>обговорення</a>
+        <a class="navbtn" href="#">Нормативна<br>база</a>
+        <a class="navbtn" href="#">Опитування</a>
+        <a class="navbtn" href="#">Підвищення<br>кваліфікації</a>
+        <a class="navbtn" href="#">Школа<br>гарантів</a>
+        <a class="navbtn" href="#">Щорічне<br>оцінювання</a>
+        <a class="navbtn" href="#">Академічна<br>доброчесність</a>
+        <a class="navbtn" href="#">Конференції<br>та семінари</a>
+      </aside>
+    </section>
+
+  </main>
+</body>
+</html>
