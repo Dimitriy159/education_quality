@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Науково-методичне відділення ВКСС ХНУПС</title>
+
+    <style>
+          :root{
+            --bg: #e9e4dc;                 /* теплий світлий фон */
+            --text: #1a1a1a;
+            --blue: #6ea6ff;               /* синій як у кнопках */
+            --blue-dark: #2b4f9e;
+            --shadow: 0 6px 14px rgba(0,0,0,.18);
+            --radius: 6px;
+            --content-max: 1180px;
+          }
+
+          *{ box-sizing: border-box; }
+          body{
+            margin: 0;
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.45;
+          }
+
+          /* Обгортка сторінки */
+          .page{
+            width: min(var(--content-max), calc(100% - 40px));
+            margin: 0 auto;
+            padding: 28px 0 60px;
+            position: relative;
+          }
+
+          /* Основна зона: текст + правий сайдбар */
+          .layout{
+            display: grid;
+            grid-template-columns: 1fr 220px;
+            gap: 28px;
+            align-items: start;
+          }
+
+          /* Контент */
+          .content{
+            padding-left: 10px;
+          }
+
+          a{
+            color: #1a57ff;
+            text-decoration: none;
+          }
+          a:hover{ text-decoration: underline; }
+
+          /* Праве меню */
+          .sidebar{
+            position: sticky;
+            top: 14px;
+            padding-top: 6px;
+          }
+
+          .navbtn{
+            display: block;
+            width: 100%;
+            padding: 16px 12px;
+            margin: 0 0 14px;
+            text-align: center;
+            background: var(--blue);
+            color: #0b204a;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0,0,0,.08);
+
+            font-weight: 800;
+            letter-spacing: .6px;
+            text-transform: uppercase;
+            font-size: 14px;
+            line-height: 1.05;
+            user-select: none;
+            transition: all 0.5s ease;
+            text-decoration: none;
+          }
+
+          .navbtn:hover{
+            background: #4c7ccb;
+            filter: brightness(0.97);
+            transform: scale(1.08);
+            text-decoration: none;
+          }
+
+          .navbtn:active{
+            transform: translateY(0px);
+            box-shadow: 0 3px 10px rgba(0,0,0,.16);
+          }
+
+          .navbtn.active{
+            background: #4c7ccb;
+            transform: scale(1.08);
+            box-shadow: 0 3px 10px rgba(0,0,0,.16);
+          }
+
+          /* Адаптивність */
+          @media (max-width: 980px){
+            .layout{ grid-template-columns: 1fr; }
+            .sidebar{ position: relative; top: 0; }
+          }
+          html { scrollbar-gutter: stable; }
+
+    </style>
+</head>
+
+<body>
+<main class="page">
+    <!-- Контент + праве меню -->
+    <section class="layout">
+        <article class="content">
+            <h1 align="center">Школа Гарантів</h1>
+            <h2>Корисні посилання:</h2>
+            <a href="https://naqa.gov.ua/wp-content/uploads/2024/12/%D0%A0%D0%BE%D0%B7%D1%8F%D1%81%D0%BD%D0%B5%D0%BD%D0%BD%D1%8F-%D1%89%D0%BE%D0%B4%D0%BE-%D0%B7%D0%B0%D1%81%D1%82%D0%BE%D1%81%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F-%D0%9A%D1%80%D0%B8%D1%82%D0%B5%D1%80%D1%96%D1%97%D0%B2-%D0%BE%D1%86%D1%96%D0%BD%D1%8E%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F-%D1%8F%D0%BA%D0%BE%D1%81%D1%82%D1%96-%D0%BE%D1%81%D0%B2%D1%96%D1%82%D0%BD%D1%8C%D0%BE%D1%97-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%B8.pdf">1.
+                Роз'яснення щодо застосування Критеріїв оцінювання якості освітньої програми.</a><br>
+            <a href="https://www.youtube.com/watch?app=desktop&v=E15aCkmKDZ8&ab_channel=NAQAUA">2. Роз'яснення щодо змін
+                у формі відомості про самооцінювання освітніх програм від НАЗЯВО.</a><br>
+            <a href="https://naqa.gov.ua/2024/08/naqa_%d1%96%d0%bd%d1%84%d0%be%d1%80%d0%bc%d1%83%d1%94-%d0%bf%d1%80%d0%be-%d0%be%d0%bd%d0%be%d0%b2%d0%bb%d0%b5%d0%bd%d1%83-%d1%84%d0%be%d1%80%d0%bc%d1%83-%d0%b2%d1%96%d0%b4%d0%be%d0%bc%d0%be%d1%81/">3.
+                Нова форма відомостей про самооцінювання освітніх програм за посиланням.</a><br>
+            <a href="https://naqa.gov.ua/2024/09/%d0%b0%d0%ba%d1%80%d0%b5%d0%b4%d0%b8%d1%82%d0%b0%d1%86%d1%96%d1%8f-%d0%be%d1%81%d0%b2%d1%96%d1%82%d0%bd%d1%96%d1%85-%d0%bf%d1%80%d0%be%d0%b3%d1%80%d0%b0%d0%bc-%d1%8f%d0%ba%d1%96-%d0%bd%d0%be%d0%b2/">4.
+                Акредитація освітніх програм: які новації та виклики для ЗВО?</a>
+        </article>
+
+        <aside class="sidebar" aria-label="Праве меню">
+            <a class="navbtn" href="../index.html">Головна</a>
+            <a class="navbtn" href="#">Новини</a>
+            <a class="navbtn" href="#">Громадське обговорення</a>
+            <a class="navbtn" href="./norm_base.html">Нормативна база</a>
+            <a class="navbtn" href="./poll.html">Опитування</a>
+            <a class="navbtn" href="./qualification.html">Підвищення кваліфікації</a>
+            <a class="navbtn active" href="#">Школа гарантів</a>
+            <a class="navbtn" href="./annual_evaluation.html">Щорічне оцінювання</a>
+            <a class="navbtn" href="#">Академічна доброчесність</a>
+        </aside>
+    </section>
+</main>
+</body>
+</html>
+

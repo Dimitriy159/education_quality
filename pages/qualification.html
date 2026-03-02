@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Науково-методичне відділення ВКСС ХНУПС</title>
+
+    <style>
+          :root{
+            --bg: #e9e4dc;                 /* теплий світлий фон */
+            --text: #1a1a1a;
+            --blue: #6ea6ff;               /* синій як у кнопках */
+            --blue-dark: #2b4f9e;
+            --shadow: 0 6px 14px rgba(0,0,0,.18);
+            --radius: 6px;
+            --content-max: 1180px;
+          }
+
+          *{ box-sizing: border-box; }
+          body{
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.45;
+          }
+
+          /* Обгортка сторінки */
+          .page{
+            width: min(var(--content-max), calc(100% - 40px));
+            margin: 0 auto;
+            padding: 28px 0 60px;
+            position: relative;
+          }
+
+          /* Основна зона: текст + правий сайдбар */
+          .layout{
+            display: grid;
+            grid-template-columns: 1fr 220px;
+            gap: 28px;
+            align-items: start;
+          }
+
+          /* Контент */
+          .content{
+            padding-left: 10px;
+          }
+
+          a{
+            color: #1a57ff;
+            text-decoration: none;
+          }
+          a:hover{ text-decoration: underline; }
+
+          /* Праве меню */
+          .sidebar{
+            position: sticky;
+            top: 14px;
+            padding-top: 6px;
+          }
+
+          .navbtn{
+            display: block;
+            width: 100%;
+            padding: 16px 12px;
+            margin: 0 0 14px;
+            text-align: center;
+            background: var(--blue);
+            color: #0b204a;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0,0,0,.08);
+
+            font-weight: 800;
+            letter-spacing: .6px;
+            text-transform: uppercase;
+            font-size: 14px;
+            line-height: 1.05;
+            user-select: none;
+            transition: all 0.5s ease;
+            text-decoration: none;
+          }
+
+          .navbtn:hover{
+            background: #4c7ccb;
+            filter: brightness(0.97);
+            transform: scale(1.08);
+            text-decoration: none;
+          }
+
+          .navbtn:active{
+            transform: translateY(0px);
+            box-shadow: 0 3px 10px rgba(0,0,0,.16);
+          }
+
+          .navbtn.active{
+            background: #4c7ccb;
+            transform: scale(1.08);
+            box-shadow: 0 3px 10px rgba(0,0,0,.16);
+          }
+
+          /* Адаптивність */
+          @media (max-width: 980px){
+            .layout{ grid-template-columns: 1fr; }
+            .sidebar{ position: relative; top: 0; }
+          }
+          .useful-links{
+            padding:60px 20px;
+            background:#e9e4dc;
+            text-align:center;
+          }
+
+          .section-title{
+            font-size:38px;
+            font-weight:800;
+            margin-bottom:50px;
+            letter-spacing:1px;
+          }
+
+          .links-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(270px, 1fr));
+            gap:20px;
+            max-width:980px;
+            margin:0 auto;
+          }
+
+          .link-card{
+            background:white;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.1);
+            transition:0.3s ease;
+          }
+
+          .link-card:hover{
+            transform:translateY(-8px);
+            box-shadow:0 15px 35px rgba(0,0,0,0.18);
+          }
+
+          .link-card img{
+            width:100%;
+            height:180px;
+            object-fit:cover;
+            border-radius:6px;
+            margin-bottom:20px;
+          }
+
+          .link-card h3{
+            font-size:22px;
+            font-weight:700;
+            margin-bottom:15px;
+            line-height:1.4;
+          }
+
+          .link-card a{
+            display:block;
+            font-size:18px;
+            color:#2b4f9e;
+            text-decoration:none;
+            word-break:break-word;
+          }
+
+          .link-card a:hover{
+            text-decoration:underline;
+          }
+          html { scrollbar-gutter: stable; }
+
+
+    </style>
+</head>
+
+<body>
+<main class="page">
+    <!-- Контент + праве меню -->
+    <section class="layout">
+        <article class="content">
+            <h1 align="center">Підвищення кваліфікації</h1>
+            Метою підвищення кваліфікації педагогічних і науково-педагогічних працівників Військового коледжу
+            сержантського складу Харківського національного університету Повітряних Сил імені Івана Кожедуба є їх
+            професійний розвиток відповідно до державної політики у сфері освіти, вимог щодо забезпечення якості
+            освітньої діяльності та завдань підготовки військових фахівців.
+            Відповідно до Постанови Кабінету Міністрів України від 21 серпня 2019 року №800 «Деякі питання підвищення
+            кваліфікації педагогічних і науково-педагогічних працівників» у Коледжі діє накопичувальна система
+            підвищення кваліфікації. Загальний обсяг підвищення кваліфікації педагогічних та науково-педагогічних
+            працівників протягом п’яти років не може бути меншим ніж шість кредитів ЄКТС (180 годин).
+            Більш детальна інформація щодо підвищення кваліфікації педагогічних і науково-педагогічних працівників
+            наведена у Положенні про професійний розвиток педагогічних та науково-педагогічних працівників ВКСС ХНУПС.
+            Харківський національний університет Повітряних Сил імені Івана Кожедуба (як базовий заклад) проводить
+            ліцензовані курси підвищення кваліфікації, до яких можуть залучатися педагогічні та науково-педагогічні
+            працівники Коледжу, зокрема:
+            Курси підвищення кваліфікації з питань методичної майстерності тривалістю 240 годин (8 кредитів ЄКТС);
+            Курси підвищення кваліфікації з питань освітньої діяльності тривалістю 120 годин (4 кредити ЄКТС).
+            <h1 align="center">МОЖЛИВОСТІ</h1>
+            За сприяння Міністерства освіти і науки України надано безоплатний доступ до 12,5 тисяч навчальних курсів
+            платформи Udemy (https://www.udemy.com/
+            ). Udemy є однією з найбільших у світі онлайн-платформ за кількістю курсів, які мають практичну
+            спрямованість та орієнтовані на вирішення конкретних професійних завдань. Курси можуть стати ефективним
+            доповненням до навчальних дисциплін та сприяти підвищенню професійної компетентності викладачів.
+            Після завершення навчання передбачена можливість отримання відповідних сертифікатів.
+            У разі бажання долучитися до зазначеної платформи педагогічним працівникам або підпорядкованому особовому
+            складу просимо надати списки з електронними адресами за встановленим порядком через відповідальних осіб
+            Коледжу.
+
+            <section class="useful-links">
+                <h2 class="section-title">КОРИСНІ ПОСИЛАННЯ:</h2>
+
+                <div class="links-grid">
+
+                    <!-- EdEra -->
+                    <div class="link-card">
+                        <img src="../images/edera_logo.png" alt="EdEra">
+                        <h3>
+                            Студія<br>
+                            онлайн-освіти EdEra<br>
+                            (безкоштовно)
+                        </h3>
+                        <a href="https://ed-era.com/courses/" target="_blank">
+                            https://ed-era.com/courses/
+                        </a>
+                    </div>
+
+                    <!-- Prometheus -->
+                    <div class="link-card">
+                        <img src="../images/prometheus_logo.png" alt="Prometheus">
+                        <h3>
+                            Український громадський проект<br>
+                            масових відкритих онлайн-курсів<br>
+                            «Prometheus»<br>
+                            (безкоштовно)
+                        </h3>
+                        <a href="https://prometheus.org.ua/courses-catalog/" target="_blank">
+                            https://prometheus.org.ua/courses-catalog/
+                        </a>
+                    </div>
+
+                    <!-- NATO DEEP -->
+                    <div class="link-card">
+                        <img src="../images/nato_logo.jpg" alt="NATO DEEP">
+                        <h3>
+                            Українська платформа<br>
+                            дистанційного навчання<br>
+                            на порталі Програми NATO DEEP<br>
+                            (безкоштовно)
+                        </h3>
+                        <a href="https://deepportal.hq.nato.int/ukrelp" target="_blank">
+                            https://deepportal.hq.nato.int/ukrelp
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+        </article>
+
+
+        <aside class="sidebar" aria-label="Праве меню">
+            <a class="navbtn" href="../index.html">Головна</a>
+            <a class="navbtn" href="#">Новини</a>
+            <a class="navbtn" href="#">Громадське обговорення</a>
+            <a class="navbtn" href="./norm_base.html">Нормативна база</a>
+            <a class="navbtn" href="./poll.html">Опитування</a>
+            <a class="navbtn active" href="#">Підвищення кваліфікації</a>
+            <a class="navbtn" href="./guarantor_school.html">Школа гарантів</a>
+            <a class="navbtn" href="./annual_evaluation.html">Щорічне оцінювання</a>
+            <a class="navbtn" href="#">Академічна доброчесність</a>
+        </aside>
+    </section>
+</main>
+</body>
+</html>
+

@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Нормативна база – ВКСС ХНУПС</title>
+
+    <style>
+      :root {
+        --bg: #e9e4dc; /* теплий світлий фон */
+        --text: #1a1a1a;
+        --blue: #6ea6ff; /* синій як у кнопках */
+        --blue-dark: #2b4f9e;
+        --shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+        --radius: 6px;
+        --content-max: 1180px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.45;
+      }
+
+      /* Обгортка сторінки */
+      .page {
+        width: min(var(--content-max), calc(100% - 40px));
+        margin: 0 auto;
+        padding: 28px 0 60px;
+        position: relative;
+      }
+      h1 {
+        text-align: center;
+        font-family: "Georgia", serif;
+        font-size: 42px;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+      }
+
+      .divider {
+        width: 220px;
+        height: 3px;
+        background: #2b4f9e;
+        margin: 0 auto 40px;
+      }
+
+      .list {
+        background: #f3f0ea;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+
+      .list-item {
+        padding: 18px 20px;
+        border-bottom: 1px solid #d7d3cd;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .list-item:hover {
+        background: #e6e1db;
+      }
+
+      .list-item:last-child {
+        border-bottom: none;
+      }
+
+      /* Основна зона: текст + правий сайдбар */
+      .layout {
+        display: grid;
+        grid-template-columns: 1fr 220px;
+        gap: 28px;
+        align-items: start;
+      }
+
+      /* Контент */
+      .content {
+        padding-left: 10px;
+      }
+
+      a {
+        color: #1a57ff;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .subline {
+        margin: 0 0 16px;
+        font-size: 18px;
+      }
+
+      /* Нумерований список як у прикладі */
+      ol {
+        margin: 0;
+        padding-left: 24px;
+        font-size: 18px;
+      }
+      ol li {
+        margin: 8px 0;
+      }
+
+      /* Праве меню */
+      .sidebar {
+        position: sticky;
+        top: 14px;
+        padding-top: 6px;
+      }
+
+      .navbtn {
+        display: block;
+        width: 100%;
+        padding: 16px 12px;
+        margin: 0 0 14px;
+        text-align: center;
+        background: var(--blue);
+        color: #0b204a;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        font-weight: 800;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 1.05;
+        user-select: none;
+        transition: all 0.2s ease;
+        text-decoration: none;
+      }
+
+      .navbtn:hover {
+        background: #4c7ccb;
+        filter: brightness(0.97);
+        transform: scale(1.08);
+        text-decoration: none;
+      }
+
+      .navbtn.active {
+        background: #4c7ccb;
+        transform: scale(1.08);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
+      }
+
+      /* MODAL */
+      .modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .modal-content {
+        background: white;
+        padding: 30px;
+        width: min(600px, 90%);
+        border-radius: 8px;
+        animation: fadeIn 0.25s ease;
+      }
+
+      .modal-content h2 {
+        margin-top: 0;
+      }
+
+      .modal-content button {
+        margin-top: 20px;
+        padding: 10px 18px;
+        background: #2b4f9e;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .close {
+        float: right;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 900px) {
+        .page {
+          grid-template-columns: 1fr;
+        }
+      }
+      html { scrollbar-gutter: stable; }
+
+    </style>
+</head>
+
+<body>
+<main class="page">
+    <!-- Контент + праве меню -->
+    <section class="layout">
+        <article class="content">
+            <div>
+                <h1>Нормативна база</h1>
+                <div class="divider"></div>
+                <div class="list">
+                    <div class="list-item" onclick="openModal('m1')">
+                        Закон України "Про фахову передвищу освіту"
+                    </div>
+                    <div class="list-item" onclick="openModal('m2')">
+                        Закон України "Про освіту"
+                    </div>
+                    <div class="list-item" onclick="openModal('m3')">
+                        Ліцензійні умови провадження освітньої діяльності
+                    </div>
+                    <!--            <div class="list-item" onclick="openModal('m4')">-->
+                    <!--              Положення про акредитацію освітньо-професійних програм-->
+                    <!--            </div>-->
+                    <div class="list-item" onclick="openModal('m5')">
+                        Положення про організацію освітнього процесу
+                    </div>
+                    <div class="list-item" onclick="openModal('m6')">
+                        Стандарти фахової передвищої освіти
+                    </div>
+                    <!--            <div class="list-item" onclick="openModal('m7')">-->
+                    <!--              Внутрішня система забезпечення якості освіти-->
+                    <!--            </div>-->
+                    <!--            <div class="list-item" onclick="openModal('m8')">-->
+                    <!--              Академічна доброчесність-->
+                    <!--            </div>-->
+                    <!--            <div class="list-item" onclick="openModal('m9')">-->
+                    <!--              Практична підготовка здобувачів освіти-->
+                    <!--            </div>-->
+                </div>
+            </div>
+        </article>
+
+        <aside class="sidebar" aria-label="Праве меню">
+            <a class="navbtn" href="../index.html">Головна</a>
+            <a class="navbtn" href="#">Новини</a>
+            <a class="navbtn" href="#">Громадське обговорення</a>
+            <a class="navbtn active" href="#">Нормативна база</a>
+            <a class="navbtn" href="./poll.html">Опитування</a>
+            <a class="navbtn" href="./qualification.html">Підвищення кваліфікації</a>
+            <a class="navbtn" href="./guarantor_school.html">Школа гарантів</a>
+            <a class="navbtn" href="./annual_evaluation.html">Щорічне оцінювання</a>
+            <a class="navbtn" href="#">Академічна доброчесність</a>
+        </aside>
+    </section>
+</main>
+
+<div id="m1" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('m1')">&times;</span>
+        <h2>Закон України "Про фахову передвищу освіту"</h2>
+        <p>
+            Визначає правові та організаційні засади функціонування системи
+            фахової передвищої освіти.
+        </p>
+        <button
+                onclick="
+            window.open('https://zakon.rada.gov.ua/laws/show/2745-19#Text')
+          "
+        >
+            Перейти до документа
+        </button>
+    </div>
+</div>
+
+<div id="m2" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('m2')">&times;</span>
+        <h2>Закон України "Про освіту"</h2>
+        <p>
+            Базовий нормативний документ, що регламентує систему освіти України.
+        </p>
+        <button
+                onclick="
+            window.open('https://zakon.rada.gov.ua/laws/show/2145-19#Text')
+          "
+        >
+            Перейти до документа
+        </button>
+    </div>
+</div>
+
+<div id="m3" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('m3')">&times;</span>
+        <h2>Ліцензійні умови</h2>
+        <p>
+            Встановлюють вимоги до провадження освітньої діяльності у закладах
+            фахової передвищої освіти.
+        </p>
+        <button
+                onclick="
+            window.open(
+              'https://zakon.rada.gov.ua/laws/show/1187-2015-%D0%BF#Text%20',
+            )
+          "
+        >
+            Перейти до документа
+        </button>
+    </div>
+</div>
+
+<!--<div id="m4" class="modal">-->
+<!--  <div class="modal-content">-->
+<!--    <span class="close" onclick="closeModal('m4')">&times;</span>-->
+<!--    <h2>Акредитація освітніх програм</h2>-->
+<!--    <p>Регламентує порядок акредитації освітньо-професійних програм.</p>-->
+<!--    <button onclick="window.open('#')">Перейти до документа</button>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div id="m5" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('m5')">&times;</span>
+        <h2>Організація освітнього процесу</h2>
+        <p>
+            Визначає порядок організації навчання у закладах фахової передвищої
+            освіти.
+        </p>
+        <button
+                onclick="
+            window.open('https://zakon.rada.gov.ua/laws/show/z0453-24#Text')
+          "
+        >
+            Перейти до документа
+        </button>
+    </div>
+</div>
+
+<div id="m6" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('m6')">&times;</span>
+        <h2>Стандарти освіти</h2>
+        <p>
+            Містять вимоги до змісту та результатів навчання за спеціальностями.
+        </p>
+        <button
+                onclick="
+            window.open('https://www.dnmczkmo.org.ua/derzhavni-standarty/')
+          "
+        >
+            Перейти до документа
+        </button>
+    </div>
+</div>
+
+<!--<div id="m7" class="modal">-->
+<!--  <div class="modal-content">-->
+<!--    <span class="close" onclick="closeModal('m7')">&times;</span>-->
+<!--    <h2>Внутрішня система якості</h2>-->
+<!--    <p>Описує механізми забезпечення та моніторингу якості освітньої діяльності.</p>-->
+<!--    <button onclick="window.open('#')">Перейти до документа</button>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div id="m8" class="modal">-->
+<!--  <div class="modal-content">-->
+<!--    <span class="close" onclick="closeModal('m8')">&times;</span>-->
+<!--    <h2>Академічна доброчесність</h2>-->
+<!--    <p>Регламентує принципи академічної етики та запобігання порушенням.</p>-->
+<!--    <button onclick="window.open('#')">Перейти до документа</button>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div id="m9" class="modal">-->
+<!--  <div class="modal-content">-->
+<!--    <span class="close" onclick="closeModal('m9')">&times;</span>-->
+<!--    <h2>Практична підготовка</h2>-->
+<!--    <p>Визначає порядок організації практики здобувачів фахової передвищої освіти.</p>-->
+<!--    <button onclick="window.open('#')">Перейти до документа</button>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!-- ===== JS ===== -->
+
+<script>
+      function openModal(id) {
+        document.getElementById(id).style.display = "flex";
+      }
+
+      function closeModal(id) {
+        document.getElementById(id).style.display = "none";
+      }
+
+      window.onclick = function (e) {
+        if (e.target.classList.contains("modal")) {
+          e.target.style.display = "none";
+        }
+      };
+
+</script>
+</body>
+</html>

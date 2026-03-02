@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Науково-методичне відділення ВКСС ХНУПС</title>
+
+    <style>
+          :root{
+            --bg: #e9e4dc;                 /* теплий світлий фон */
+            --text: #1a1a1a;
+            --blue: #6ea6ff;               /* синій як у кнопках */
+            --blue-dark: #2b4f9e;
+            --shadow: 0 6px 14px rgba(0,0,0,.18);
+            --radius: 6px;
+            --content-max: 1180px;
+          }
+
+          *{ box-sizing: border-box; }
+          body{
+            margin: 0;
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.45;
+          }
+
+          /* Обгортка сторінки */
+          .page{
+            width: min(var(--content-max), calc(100% - 40px));
+            margin: 0 auto;
+            padding: 28px 0 60px;
+            position: relative;
+          }
+
+          /* Основна зона: текст + правий сайдбар */
+          .layout{
+            display: grid;
+            grid-template-columns: 1fr 220px;
+            gap: 28px;
+            align-items: start;
+          }
+
+          /* Контент */
+          .content{
+            padding-left: 10px;
+          }
+
+          a{
+            color: #1a57ff;
+            text-decoration: none;
+          }
+          a:hover{ text-decoration: underline; }
+
+          /* Праве меню */
+          .sidebar{
+            position: sticky;
+            top: 14px;
+            padding-top: 6px;
+          }
+
+          .navbtn{
+            display: block;
+            width: 100%;
+            padding: 16px 12px;
+            margin: 0 0 14px;
+            text-align: center;
+            background: var(--blue);
+            color: #0b204a;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0,0,0,.08);
+
+            font-weight: 800;
+            letter-spacing: .6px;
+            text-transform: uppercase;
+            font-size: 14px;
+            line-height: 1.05;
+            user-select: none;
+            transition: all 0.5s ease;
+            text-decoration: none;
+          }
+
+          .navbtn:hover{
+            background: #4c7ccb;
+            filter: brightness(0.97);
+            transform: scale(1.08);
+            text-decoration: none;
+          }
+
+          .navbtn:active{
+            transform: translateY(0px);
+            box-shadow: 0 3px 10px rgba(0,0,0,.16);
+          }
+
+          .navbtn.active{
+            background: #4c7ccb;
+            transform: scale(1.08);
+            box-shadow: 0 3px 10px rgba(0,0,0,.16);
+          }
+
+          /* Адаптивність */
+          @media (max-width: 980px){
+            .layout{ grid-template-columns: 1fr; }
+            .sidebar{ position: relative; top: 0; }
+          }
+          html { scrollbar-gutter: stable; }
+
+    </style>
+</head>
+
+<body>
+<main class="page">
+    <!-- Контент + праве меню -->
+    <section class="layout">
+        <article class="content">
+            <h1 align="center">Опитування</h1>
+            Опитування у Військовому коледжі сержантського складу Харківського національного
+            університету Повітряних Сил імені Івана Кожедуба проводяться відповідно до
+            Положення про порядок організації та проведення опитувань учасників освітнього
+            процесу щодо якості освітньої діяльності у ВКСС ХНУПС. Опитування у Коледжі є
+            складовою внутрішньої системи забезпечення якості освіти та здійснюються з метою
+            визначення думки учасників освітнього процесу щодо рівня якості освітньої
+            діяльності для її подальшого удосконалення, стимулювання професійного зростання
+            педагогічних і науково-педагогічних працівників, врахування інтересів
+            стейкхолдерів при формуванні цілей навчання, а також визначення рівня
+            задоволеності курсантів різними аспектами освітньої підтримки. Проведення
+            опитувань у ВКСС здійснюється із використанням системи дистанційного навчання
+            <a href="https://moodle.hnups.mil.gov.ua/login/index.php?loginredirect=1">Moodle</a>. Інформація про
+            результати опитувань належить до відомостей з обмеженим
+            доступом відповідно до пункту 18.8 наказу Генерального штабу Збройних Сил
+            України від 30.07.2025 №118 «Про затвердження Переліку відомостей Збройних Сил
+            України, що становлять службову інформацію (ПСІ ЗСУ-2025)».
+        </article>
+
+        <aside class="sidebar" aria-label="Праве меню">
+            <a class="navbtn" href="../index.html">Головна</a>
+            <a class="navbtn" href="#">Новини</a>
+            <a class="navbtn" href="#">Громадське обговорення</a>
+            <a class="navbtn" href="./norm_base.html">Нормативна база</a>
+            <a class="navbtn active" href="#">Опитування</a>
+            <a class="navbtn" href="./qualification.html">Підвищення кваліфікації</a>
+            <a class="navbtn" href="./guarantor_school.html">Школа гарантів</a>
+            <a class="navbtn" href="./annual_evaluation.html">Щорічне оцінювання</a>
+            <a class="navbtn" href="#">Академічна доброчесність</a>
+        </aside>
+    </section>
+</main>
+</body>
+</html>
+
